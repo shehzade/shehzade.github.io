@@ -9,6 +9,8 @@ tags: coding-challenge scripting python algorithms
 
 The Mine Field was a challenge meant to assess a penetration tester’s scripting skills by presenting a 22x22 minefield and asking the tester to rapidly find the path from the starting point to the finishing point without hitting the bombs. Furthermore, in addition to the minefield expiring every seven seconds, the answer needed to be formatted as a sequence of directions such as D for down and L for left etc… while also being less than 500 characters.  
 
+![](/assets/img/posts/Aspose.Words.e9d112e2-f037-4889-9814-54552f2bdf63.000.png)
+
 As a quick summary, the way I solved this was by first scraping the webpage using Python. Then splitting the source code and formatting the minefield (which was inside an HTML table) as a two-dimensional array. After I had a navigable 2D array, I used the Breadth-First-Search (BFS) algorithm to find the path from the starting point to the finishing point and print what steps it took to get there. A more technical and in-depth writeup will follow below. 
 
 ## Step 1 – Transform the Minefield into a Python-Readable Format 
@@ -23,7 +25,7 @@ It’s also important to note that the way I retrieved my session cookie was by 
 
 ![](/assets/img/posts/Aspose.Words.e9d112e2-f037-4889-9814-54552f2bdf63.004.jpeg)
 
-Once I had a raw web request stored inside the ```raw_html``` variable, I wanted to parse the page’s source code into a sortable and searchable format while throwing out parts of the request I wouldn’t need (like the headers). I performed this by passing the web page’s text into a library called BeautifulSoup which parses HTML code and makes it easier to work with. This was done by importing the ```bs4``` package and passing the ```raw_html``` variable to BeautifulSoup as shown and storing the output in the soup variable. 
+Once I had a raw web request stored inside the ```raw_html``` variable, I wanted to parse the page’s source code into a sortable and searchable format while throwing out parts of the request I wouldn’t need (like the headers). I performed this by passing the web page’s text into a library called BeautifulSoup which parses HTML code and makes it easier to work with. This was done by importing the ```bs4``` package and passing the ```raw_html``` variable to BeautifulSoup as shown and storing the output in the ```soup``` variable. 
 
 ![](/assets/img/posts/Aspose.Words.e9d112e2-f037-4889-9814-54552f2bdf63.005.png)
 
@@ -86,7 +88,7 @@ If the move manages to pass all the validity checks, the move along with its cor
 
 ![](/assets/img/posts/Aspose.Words.e9d112e2-f037-4889-9814-54552f2bdf63.016.png)
 
-The full script can be found at my [GitHub](https://github.com/shehzade). 
+The full script can be found at my [GitHub](https://github.com/shehzade/mini-scripts/tree/master/coding_challenges/maze_solver). 
 
 <!-- TO-DO: Add the exact script link! -->
 <!-- TO-DO: Fix code screenshots so that all of them are from the same text editor! -->

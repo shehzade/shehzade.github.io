@@ -1,4 +1,4 @@
-# Shehzade.io
+# [Shehzade.io](https://shehzade.io)
 
 This is my personal portfolio website, served using [Jekyll](https://jekyllrb.com/) for static sites.
 

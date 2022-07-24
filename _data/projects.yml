@@ -20,6 +20,5 @@ items:
     description: Windows Host Enumeration Tool
 
   - name: Substitution Cipher
-    url: https://github.com/shehzade/ctfs-reports-challenges/tree/master/coding_challenges/substitution_cipher
+    url: https://github.com/shehzade/mini-scripts/tree/master/coding_challenges/substitution_cipher
     description: C++ Implementation of the Substitution Cipher
-    # TO-DO: Update this link once the repo is renamed and things are situated!
