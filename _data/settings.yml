@@ -1,0 +1,12 @@
+menu:
+- {name: 'Blog', url: '/blog'}
+- {name: 'Resume', url: '/assets/docs/abdullah_ansari_professional_résumé.pdf'}
+
+social:
+- {icon: 'github', category: "fab", link: 'https://github.com/shehzade'}
+- {icon: 'twitter', category: "fab", link: 'https://twitter.com/shehzade1618'}
+- {icon: 'linkedin', category: "fab", link: 'https://www.linkedin.com/in/abdullahansari0'}
+- {icon: 'rss', category: "fas", link: '/feed.xml'}
+
+#- {icon: 'HackerOne', link: 'https://hackerone.com/shehzade'}
+#- {icon: 'BugCrowd', link: 'https://bugcrowd.com/shehzade'}

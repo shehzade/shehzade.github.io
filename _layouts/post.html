@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="fw-bold mb-3">{{ page.title }}</h3>
+    <p><i>{{ page.date | date: "%b %d, %Y" }}</i></p>
+
+    {% if page.tags and page.tags != empty %}
+    {% assign tags = page.tags %}
+    {% for tag in tags %}
+    {% assign tag_slug = tag | slugify: "raw" %}
+    <span class="badge bg-light text-dark">
+      <a
+        style="text-decoration: none;" 
+        href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}>
+        #{{ tag }}
+      </a>
+    </span>
+    {% endfor %}
+    {% endif %}
+    <hr>
+  </div>
+  <div class="col-md-12">
+
+    {{ content }}
+
+    {% include comments.html %}
+  </div>
+</div>

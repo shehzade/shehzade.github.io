@@ -1,0 +1,15 @@
+items:
+  - name: Pre-Engagement Scope
+    description: The scoping document describes the what, when, how, and why of the assessment. 
+    type: document
+#    filename:
+
+  - name: Application Assessment Report
+    description: The report contains vulnerabilities, proof of concepts, and remediations.
+    type: document
+#    filename:
+
+  - name: Debrief Presentation Recording
+    description: The executive debrief allows testers to walk company executives through the assessment's results.
+    type: link
+    link: https://youtu.be/PQkkoq1u8UE

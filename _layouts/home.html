@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<div class="row g-5 mb-5">
+  <div class="col-md-12">
+    {{ content }}
+  </div>
+  <!--
+  <div class="col-md-4">
+    <img src="{{ site.github.url }}/assets/img/home.jpg" alt="Home" width="100%">
+  </div>
+  -->
+</div>
+
+<!-- Projects -->
+<div class="row row-cols-1 row-cols-md-3 g-2 mb-5">
+  <div class="col-md-12">
+    <h4 class="fw-bold border-bottom pb-3 mb-3">Notable Projects</h4>
+    <p>
+      Tools I'm actively working on to share with the security community. Check out
+      my <a href="https://github.com/shehzade">GitHub</a> to see all past work.
+    </p>
+  </div>
+
+  {% for item in site.data.projects.items %}
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title"><a href="{{ item.url }}">{{ item.name }}</a></h5>
+        <p class="card-text">{{ item.description }} </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="row g-5 mb-5">
+
+  <!-- Publications-->
+  <div class="col-md-6">
+    <h4 class="fw-bold border-bottom pb-3 mb-3">Research Publications</h4>
+    {% for item in site.data.publications.items %}
+      <p><a href="{{ item.url }}">{{ item.name }}</a> <i>{{ item.conference }}</i></p>
+      <p><i>{{ item.author }}</i></p>
+    {% endfor %}
+  </div>
+
+  <!-- Writing Samples -->
+  <div class="col-md-6">
+    <h4 class="fw-bold border-bottom pb-3 mb-4">Writing & Presentation Samples</h4>
+    
+    <p>While interning at <a href="https://withsecure.com">WithSecure</a>, my mentor tasked me with producing professional, client-grade engagement deliverables for a mock web application assessment. I have included them for below for your viewing. Enjoy!
+    <br></br>
+    <b>Note:</b> Client/application information has been redacted and anonymized with my dummy security company (SSG) and a fake client (Dunder Mifflin) to protect the privacy of WithSecure's internal training scenarios.
+    </p>
+    
+    <ul>
+      {% for item in site.data.services.items %}
+      	{% if item.type == "document" %}
+      		<li><b><a href="/assets/docs/{{ item.filename }}">{{ item.name }}</a></b> - {{ item.description }}</li>
+      	{% endif %}
+      	{% if item.type == "video" %}
+      		<li><b><a href="/assets/vids/{{ item.filename }}">{{ item.name }}</a></b> - {{ item.description }}</li>
+      	{% endif %}
+      	{% if item.type == "link" %}
+      		<li><b><a href="{{ item.link }}">{{ item.name }}</a></b> - {{ item.description }}</li>
+      	{% endif %}	
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>

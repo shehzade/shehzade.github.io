@@ -1,0 +1,42 @@
+title: Shehzade Portfolio
+header: "Hi, I'm Abdullah!"
+  
+  #author:
+  #  name: abdullah ansari
+  #  email: abdullahansari1618@outlook.com
+
+description: "Student & Offensive Security Consultant"
+
+url: "https://shehzade.github.io"
+baseurl: ""
+repo: shehzade/shehzade.github.io
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+
+collections:
+  tags:
+    output: true
+    permalink: tags/:path/
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - node_modules
+  - academic-*.gem
+  - academic.gemspec
+
+###############
+# PLUGINS
+###############
