@@ -2,12 +2,12 @@ items:
   - name: Pre-Engagement Scope
     description: The scoping document describes the what, when, how, and why of the assessment. 
     type: document
-#    filename:
+    filename: ssg_infinity_pre-engagement-scope_2022-06-28.pdf
 
   - name: Application Assessment Report
     description: The report contains vulnerabilities, proof of concepts, and remediations.
     type: document
-#    filename:
+    filename: ssg_infinity-application-assessment-report_2022-07-08.pdf
 
   - name: Debrief Presentation Recording
     description: The executive debrief allows testers to walk company executives through the assessment's results.

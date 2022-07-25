@@ -89,6 +89,3 @@ If the move manages to pass all the validity checks, the move along with its cor
 ![](/assets/img/posts/Aspose.Words.e9d112e2-f037-4889-9814-54552f2bdf63.016.png)
 
 The full script can be found at my [GitHub](https://github.com/shehzade/mini-scripts/tree/master/coding_challenges/maze_solver). 
-
-<!-- TO-DO: Add the exact script link! -->
-<!-- TO-DO: Fix code screenshots so that all of them are from the same text editor! -->
