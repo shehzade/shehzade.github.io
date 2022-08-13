@@ -11,9 +11,9 @@ items:
     url: https://github.com/shehzade/brutus
     description: Authentication Bruteforcing Tool for Network Services 
 
-  - name: God Mode (In Development)
+  - name: "![Disclosure in Progress]!"
     url: https://github.com/shehzade/
-    description: Automated Privilege Escalation Tool for Linux
+    description: "PoC Code for Vulnerabilities Found in [REDACTED] Smart Locks"
     
   - name: Pilfer Pirate (In Development)
     url: https://github.com/shehzade/
