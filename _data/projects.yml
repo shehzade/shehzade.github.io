@@ -1,25 +1,25 @@
 items:
 
-  - name: Peeping Tom
+  - name: peeping-tom
     url: https://github.com/shehzade/peeping-tom
     description: Remote C++ Keylogger for Windows
+
+  - name: megafeis-palm
+    url: https://github.com/WithSecureLabs/megafeis-palm
+    description: "PoC Code for Vulnerabilities Found in MEGAFEIS Smart Locks & their Mobile Companion App: DBD+"
     
-  - name: Hashish
+  - name: hashish
     url: https://github.com/shehzade/hashish
     description: Multi-Type Hash Cracking Tool
   
-  - name: Brutus
+  - name: brutus
     url: https://github.com/shehzade/brutus
     description: Authentication Bruteforcing Tool for Network Services 
 
-  - name: Infrared (In Development)
+  - name: infrared (developing)
     url: https://github.com/shehzade/
     description: Repeatable Attack Infrastructure for Enterprise Red Teams using IaC
-    
-  - name: "![Disclosure in Progress]!"
-    url: https://github.com/shehzade/
-    description: "PoC Code for Vulnerabilities Found in [REDACTED] Smart Locks"
 
-  - name: Substitution Cipher
+  - name: substitution-cipher
     url: https://github.com/shehzade/mini-scripts/tree/master/coding_challenges/substitution_cipher
     description: C++ Implementation of the Substitution Cipher

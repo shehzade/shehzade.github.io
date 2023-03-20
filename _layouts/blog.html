@@ -9,6 +9,10 @@ layout: default
     <p>[XPOST] <a href="{{ post.xpost }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
     {% elsif post.pdf %}
     <p>[PDF] <a href="{{ post.pdf }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+    {% elsif post.advisory %}
+    <p hidden><a href="{{ post.advisory }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+    {% elsif post.press %}
+    <p hidden><a href="{{ post.press }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
     {% else %}
     <p><a href="{{ post.url }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
     {% endif %}

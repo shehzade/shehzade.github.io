@@ -1,5 +1,5 @@
 items:
-  - name: 'Unlocking [REDACTED] Smart Locks - (Disclosure In Progress)'
+  - name: 'Megafeis-palm: Exploiting Vulnerabilities to Open Bluetooth SmartLocks'
     author: 'Abdullah Ansari'
-    conference: Smart Lock Hacking and API Tampering | WithSecure Intern Research 2022
-    #url: 'https://www.ndss-symposium.org/wp-content/uploads/madweb2022_23001_paper.pdf'
+    conference: WithSecure Intern Research 2022
+    url: 'https://labs.withsecure.com/publications/megafeis-palm--exploiting-vulnerabilities-to-open-bluetooth-smar'
