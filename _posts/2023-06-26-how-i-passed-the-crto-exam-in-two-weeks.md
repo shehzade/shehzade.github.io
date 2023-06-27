@@ -31,7 +31,7 @@ That day at 6 pm, my exam began. I started by setting up my Cobalt Strike team s
 
 After that, I opened an RDP session on the starting workstation (the exam is an assumed breach, so you get access to one low-priv machine) and executed my beacon. I did have to do some initial troubleshooting and privilege escalation, but soon enough, I was on my way. Initially, I thought I would be spending the whole night on the exam, and it was a Friday, so I thought an all-nighter wasn't too big of an issue. But within 3 hours, I compromised the first domain and got 3 of the 6 flags needed to pass the exam.
 
-At this point, it was 9 pm, and the office was getting kind of sketchy, so I hurried home, broke my fast, prayed the sunset prayer, downed a root beer, and got right back to it. Within the next 3 hours, I compromised the 2nd domain and submitted all 6 flags, which gave me enough to pass the exam and be granted the coveted [CRTO badge](https://eu.badgr.com/public/badges/Od2nC1yPRPaDC9UCJ8W7Lg).
+At this point, it was 9 pm, and the office was getting kind of sketchy, so I hurried home, broke my fast, prayed the sunset prayer, downed a root beer, and got right back to it. Within the next 3 hours, I compromised the 2nd domain and submitted all 6 flags, which gave me enough to pass the exam and be granted the coveted [CRTO badge](https://api.eu.badgr.io/public/assertions/MxcsuVPIRFS_MTC-3AOEJQ?identity__email=abdullahansari1618%40outlook.com).
 
 Check out the beacon chain I had by the end! It was an insane 9-machine P2P beacon chain all relying on a single egress beacon. Needless to say, I was in a weird state being full of adrenaline due to my "house of cards," but also annoyed since callbacks were snail-paced. I ended the day when I passed.
 
