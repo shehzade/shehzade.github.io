@@ -19,7 +19,7 @@ My biggest praise, however, for the RTO course is that there is an active commun
 
 # My Journey
 
-If you follow me on LinkedIn, you might have heard that I recently started my second summer internship in offensive security with [IBM's X-Force Red](https://www.ibm.com/services/offensive-security) as a Penetration Testing intern. In my cohort was [Dylan Tran](https://www.linkedin.com/in/susdt), or as we knew him, Sloppy Gerald. Dylan was a malware developer, avid red teamer, and chicken broth enthusiast who was highly accomplished in the [CPTC](https://cp.tc/) and [CCDC](https://www.nationalccdc.org/) competitions, even being named champion a couple of times (which is seriously no small feat). He encouraged me to try out the CRTO near the time when we completed a riveting netpen bootcamp taught by legends [Shikata (James Rogers)](https://www.linkedin.com/in/james-rogers-network-security/) and [Choi](https://www.linkedin.com/in/sunggwan-choi), which covered Active Directory attacks (most of which I was already familiar with through previous HTB/THM experience) and Certificate Services (which was completely new to me).
+If you follow me on LinkedIn, you might have heard that I recently started my second summer internship in offensive security with [IBM's X-Force Red](https://www.ibm.com/services/offensive-security) as a Penetration Testing intern. In my cohort was [Dylan Tran](https://www.linkedin.com/in/susdt), or as we knew him, Sloppy Gerald. Dylan is a malware developer, avid red teamer, and chicken broth enthusiast who is highly accomplished in the [CPTC](https://cp.tc/) and [CCDC](https://www.nationalccdc.org/) competitions, even being named champion a couple of times (which is seriously no small feat). He encouraged me to try out the CRTO near the time when we completed a riveting netpen bootcamp taught by legends [Shikata (James Rogers)](https://www.linkedin.com/in/james-rogers-network-security/) and [Choi](https://www.linkedin.com/in/sunggwan-choi), which covered Active Directory attacks (most of which I was already familiar with through previous HTB/THM experience) and Certificate Services (which was completely new to me).
 
 The bootcamp left me captivated and hungry for more advanced AD exploitation. When I learned that RTO taught certificate services attacks, delegation attacks, malware evasion, and so much more, I signed up immediately. Over the next two weeks, I was completely occupied by the training, which I juggled with internship stuff like bootcamps, projects, and shadows.
 
@@ -35,7 +35,7 @@ At this point, it was 9 pm, and the office was getting kind of sketchy, so I hur
 
 Check out the beacon chain I had by the end! It was an insane 9-machine P2P beacon chain all relying on a single egress beacon. Needless to say, I was in a weird state being full of adrenaline due to my "house of cards," but also annoyed since callbacks were snail-paced. I ended the day when I passed.
 
-<img src="/assets/img/posts/beacon_chain.png" width="1100">
+<img src="/assets/img/posts/beacon_chain.png" width="100%" height="100%">
 
 ## Aftermath
 
