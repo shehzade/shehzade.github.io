@@ -3,7 +3,7 @@ layout: home
 title: "Home"
 ---
 
-I'm a __third year undergraduate student at the University of Houston__ and an __offensive security consultant__ passionate about red teaming, malware development, and creating open-source security tooling.
+I'm a __fourth year undergraduate student at the University of Houston__ and an __offensive security consultant__ passionate about red teaming, malware development, and creating open-source security tooling.
 
 Professionally, I've worked with consulting teams on network, web application, and hardware security assessments including source code and host configuration reviews. I've also assisted with writing job scopes and compiling comprehensive engagement reports for a variety of target audiences ranging from highly technical engineers to senior leadership.
 
