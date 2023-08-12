@@ -2,7 +2,7 @@ items:
   - name: Pre-Engagement Scope
     description: The scoping document describes the what, when, how, and why of the assessment. 
     type: document
-    filename: ssg_infinity_pre-engagement-scope_2022-06-28.pdf
+    filename: ssg_infinity-pre-engagement-scope_2022-06-28.pdf
 
   - name: Application Assessment Report
     description: The report contains vulnerabilities, proof of concepts, and remediations.
