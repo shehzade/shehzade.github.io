@@ -3,7 +3,7 @@ layout: home
 title: "Home"
 ---
 
-I'm a **Red Team Consultant at Google** and an **MS in Cybersecurity student at NYU** (GPA: 4.0), passionate about adversary simulation, malware development, and physical/social engineering operations.
+I'm a **Red Team Consultant at Google** and an **MS in Cybersecurity student at NYU**, passionate about adversary simulation, malware development, and physical/social engineering operations.
 
 Professionally, I lead assumed breach engagements, design custom phishing campaigns, and conduct physical security assessments of enterprise facilities. I also develop custom security tools, research covert C2 channels, and regularly present critical risks and remediation strategies directly to CISOs and executive leadership.
 

@@ -1,14 +1,87 @@
-$backgroundColor: #ffffff;
-$bodyColor: #000000;
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-$linkColor: #212529 !important;
+// Catppuccin Mocha themed Hacker/Red-Team Console Stylesheet
+$backgroundColor: #0d0f12;      // Deep space charcoal-black
+$bodyColor: #cdd6f4;            // Soft readable console white
+$bodyFont: "JetBrains Mono", "Fira Code", monospace;
+$linkColor: #89b4fa;            // Pastel electric blue
+$accentColor: #a6e3a1;           // Terminal console green
+$headingColor: #f5e0dc;          // Rosewater header color
+$borderColor: #313244;           // Sleek dark border
 
 body {
   background: $backgroundColor;
   color: $bodyColor;
   font-family: $bodyFont;
+  line-height: 1.6;
 }
 
-body a {
-  color: $linkColor
+// Anchors & Links
+a {
+  color: $linkColor !important;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, text-shadow 0.15s ease-in-out;
+  
+  &:hover {
+    color: $accentColor !important;
+    text-decoration: underline !important;
+    text-shadow: 0 0 8px rgba(166, 227, 161, 0.4);
+  }
+}
+
+// Navigation Overrides
+nav a {
+  color: #cdd6f4 !important;
+  font-weight: 500;
+  
+  &:hover {
+    color: $accentColor !important;
+    text-decoration: none !important;
+  }
+}
+
+// Typography Headers
+h1, h2, h3, h4, h5, h6, .fs-4 {
+  color: $headingColor !important;
+  font-weight: 700 !important;
+}
+
+.text-muted {
+  color: #a6adc8 !important;
+}
+
+// Bootstrap Layout Boundaries
+.border-bottom, .border-top {
+  border-color: $borderColor !important;
+}
+
+// Inline & Block Code Syntax Highlighting Polish
+code, kbd, pre, samp {
+  font-family: $bodyFont !important;
+}
+
+code {
+  color: $accentColor;
+  background-color: #1e1e2e;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: #1e1e2e !important;
+  border: 1px solid $borderColor;
+  border-radius: 6px;
+  
+  code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+// Social media icons coloring
+.social-media-icons a {
+  color: #a6adc8 !important;
+  
+  &:hover {
+    color: $accentColor !important;
+  }
 }
