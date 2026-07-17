@@ -20,10 +20,6 @@ items:
     url: https://github.com/shehzade/brutus
     description: Authentication Bruteforcing Tool for Network Services 
 
-  - name: infrared (developing)
-    url: https://github.com/shehzade/
-    description: Repeatable Attack Infrastructure for Enterprise Red Teams using IaC
-
   - name: substitution-cipher
     url: https://github.com/shehzade/mini-scripts/tree/master/coding_challenges/substitution_cipher
     description: C++ Implementation of the Substitution Cipher
