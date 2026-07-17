@@ -1,5 +1,10 @@
 items:
+  - name: 'Mechanistic Abliteration and SFT Trajectory Alignment for Autonomous Red Team Agents'
+    author: 'Abdullah Ansari'
+    conference: Independent Research (July 2026)
+    url: '/assets/docs/RedAI_Paper.pdf'
+
   - name: 'Megafeis-palm: Exploiting Vulnerabilities to Open Bluetooth SmartLocks'
     author: 'Abdullah Ansari'
     conference: WithSecure Intern Research 2022
-    url: 'https://labs.withsecure.com/publications/megafeis-palm--exploiting-vulnerabilities-to-open-bluetooth-smar'
+    url: 'https://labs.reversec.com/posts/2023/03/megafeis-palm-exploiting-vulnerabilities-to-open-bluetooth-smartlocks'

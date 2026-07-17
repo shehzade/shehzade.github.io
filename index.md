@@ -3,8 +3,10 @@ layout: home
 title: "Home"
 ---
 
-I'm an __associate security consultant at Google Cloud - Mandiant__ passionate about red teaming, malware development, and creating open-source security tooling.
+I'm a **Red Team Consultant at Google** and an **MS in Cybersecurity student at NYU** (GPA: 4.0), passionate about adversary simulation, malware development, and physical/social engineering operations.
 
-Professionally, I've worked with consulting teams on network, web application, and hardware security assessments including source code and host configuration reviews. I've also assisted with writing job scopes and compiling comprehensive engagement reports for a variety of target audiences ranging from highly technical engineers to senior leadership.
+Professionally, I lead assumed breach engagements, design custom phishing campaigns, and conduct physical security assessments of enterprise facilities. I also develop custom security tools, research covert C2 channels, and regularly present critical risks and remediation strategies directly to CISOs and executive leadership.
 
-I mostly spend my spare time completing security-focused courseware, writing blog posts on my experiences, building and breaking my home lab networks, and researching vulnerabilities in Bluetooth low energy (BLE) devices as well as embedded devices such as smart locks, routers, cameras, and smart home hubs.
+I hold industry-recognized certifications including **Certified Red Team Operator (CRTO)**, **Certified Red Team Lead (CRTL)**, **CompTIA Security+**, and **VHL Advanced+** (with OSCP currently in progress). Additionally, I have completed advanced offensive training programs such as MalDev Academy, Windows Internals, Offensive Azure, and Evilginx Mastery.
+
+In my spare time, I conduct independent cybersecurity research, build and evaluate autonomous red teaming agents (see [RedAI Paper](/assets/docs/RedAI_Paper.pdf)), and analyze vulnerabilities in Bluetooth Low Energy (BLE) and embedded devices.

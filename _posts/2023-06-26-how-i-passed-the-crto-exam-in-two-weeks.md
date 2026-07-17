@@ -47,7 +47,7 @@ Bottom line, if you pay attention to the course material and are able to replica
 
 # Future Plans
 
-Overall, I felt that I needed a win in my security career since I got my [first CVEs](https://shehzade.io/cve) from [last summer's research](https://labs.withsecure.com/publications/megafeis-palm--exploiting-vulnerabilities-to-open-bluetooth-smar) at WithSecure, and CRTO was the perfect confidence booster to get me all fired up for offensive security again.
+Overall, I felt that I needed a win in my security career since I got my [first CVEs](https://shehzade.io/cve) from [last summer's research](https://labs.reversec.com/posts/2023/03/megafeis-palm-exploiting-vulnerabilities-to-open-bluetooth-smartlocks) at WithSecure, and CRTO was the perfect confidence booster to get me all fired up for offensive security again.
 
 My post-CRTO plan was to immediately jump on CRTO II, which has been highly regarded as the perfect sequel into advanced red teaming (infrastructure stuff) and malware development (EDR evasion). However, we are currently in the middle of doing our internship research projects, so I don't think I'll be able to power through CRTO II with speed and dedication like I did with CRTO I since the second iteration of the course, as I've heard, is definitely **NOT** self-contained and requires extensive research and self-learning from external resources to be successful on the exam.
 

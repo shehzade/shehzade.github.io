@@ -1,5 +1,9 @@
 items:
 
+  - name: red-agent
+    url: /assets/docs/RedAI_Paper.pdf
+    description: Autonomous Red Teaming Agent combining Orthogonal Weight Surgery (Abliteration) and SFT trajectory alignment to navigate complex firewalled Active Directory environments.
+
   - name: peeping-tom
     url: https://github.com/shehzade/peeping-tom
     description: Remote C++ Keylogger for Windows
