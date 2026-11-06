@@ -425,6 +425,57 @@ section.site-section {
   color: var(--mark);
 }
 
+.bio-creds-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+
+@media (min-width: 640px) {
+  .bio-creds-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.bio-subtitle {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 12px;
+}
+
+.bio-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bio-list li {
+  font-size: 13.5px;
+  color: var(--bone);
+  margin-bottom: 8px;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.45;
+}
+
+.bio-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ash);
+}
+
+.bio-list li strong {
+  color: var(--mark);
+}
+
 /* Grid & Project Cards */
 .grid-cards {
   display: grid;

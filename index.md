@@ -3,10 +3,31 @@ layout: home
 title: "Home"
 ---
 
-I'm a **Red Team Consultant at Google** and a **Cybersecurity Master's student at NYU**, passionate about adversary simulation, malware development, and physical/social engineering operations.
+I'm a **Red Team Consultant at Google** and a **Cybersecurity Master's student at NYU**, specializing in adversary simulation, malware development, covert operations, and autonomous offensive agents.
 
-Professionally, I lead assumed breach engagements, design custom phishing campaigns, and conduct physical security assessments of enterprise facilities. I also develop custom security tools, research covert C2 channels, and regularly present critical risks and remediation strategies directly to CISOs and executive leadership.
+Professionally, I lead assumed breach engagements, engineer custom phishing payloads & infrastructure, and conduct physical security assessments of enterprise facilities. I also develop custom offensive tooling, research covert C2 channels, and regularly deliver critical risk assessments and remediation strategies directly to CISOs and executive leadership.
 
-I hold industry-recognized certifications including **Certified Red Team Operator (CRTO)**, **Certified Red Team Lead (CRTL)**, **OffSec Wireless Professional (OSWP)**, **CompTIA Security+**, and **VHL Advanced+** (with OSCP currently in progress). Additionally, I have completed advanced offensive training programs such as MalDev Academy, Windows Internals, Offensive Azure, and Evilginx Mastery.
+In my independent research, I build and evaluate autonomous red teaming agents (see [RedAI Paper](/assets/docs/RedAI_Paper.pdf)) and analyze hardware/BLE vulnerabilities in embedded and IoT devices.
 
-In my spare time, I conduct independent cybersecurity research, build and evaluate autonomous red teaming agents (see [RedAI Paper](/assets/docs/RedAI_Paper.pdf)), and analyze vulnerabilities in Bluetooth Low Energy (BLE) and embedded devices.
+<div class="bio-creds-grid">
+  <div>
+    <h4 class="bio-subtitle">// Certifications & Credentials</h4>
+    <ul class="bio-list">
+      <li><strong>CRTL</strong> — Certified Red Team Lead</li>
+      <li><strong>CRTO</strong> — Certified Red Team Operator</li>
+      <li><strong>OSWP</strong> — OffSec Wireless Professional</li>
+      <li><strong>VHL Advanced+</strong> — Virtual Hacking Labs</li>
+      <li><strong>Security+</strong> — CompTIA Security+</li>
+      <li><em>OSCP</em> — (In Progress)</li>
+    </ul>
+  </div>
+  <div>
+    <h4 class="bio-subtitle">// Advanced Offensive Training</h4>
+    <ul class="bio-list">
+      <li><strong>MalDev Academy</strong> — Windows Malware Development & Evasion</li>
+      <li><strong>Windows Internals</strong> — Process Injection, Hooking & Kernel Concepts</li>
+      <li><strong>Offensive Azure</strong> — Entra ID & Cloud Red Teaming</li>
+      <li><strong>Evilginx Mastery</strong> — Advanced AiTM Infrastructure & Bypass</li>
+    </ul>
+  </div>
+</div>
