@@ -1,5 +1,9 @@
 items:
 
+  - name: naa-dump-offline
+    url: https://github.com/shehzade/naa-dump-offline
+    description: Offline extractor and decryptor for SCCM/MECM Network Access Account (NAA) credentials and policy secrets from dead-disk WMI repositories and DPAPI master keys.
+
   - name: red-agent
     url: /assets/docs/RedAI_Paper.pdf
     description: Autonomous Red Teaming Agent combining abliteration and SFT trajectory alignment to navigate complex firewalled Active Directory environments.
@@ -9,7 +13,7 @@ items:
     description: Remote C++ Keylogger for Windows
 
   - name: megafeis-palm
-    url: https://github.com/WithSecureLabs/megafeis-palm
+    url: https://github.com/ReversecLabs/megafeis-palm
     description: "PoC Code for Vulnerabilities Found in MEGAFEIS Smart Locks & their Mobile Companion App: DBD+"
     
   - name: hashish

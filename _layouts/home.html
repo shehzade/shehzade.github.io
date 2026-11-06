@@ -41,7 +41,7 @@ layout: default
   <div class="col-md-6">
     <h4 class="fw-bold border-bottom pb-3 mb-3">Research Publications</h4>
     {% for item in site.data.publications.items %}
-      <p><a href="{{ item.url }}">{{ item.name }}</a> <i>{{ item.conference }}</i></p>
+      <p><a href="{{ item.url }}">{{ item.name }}</a>{% if item.archive_url %} (<a href="{{ item.archive_url }}">Original</a>){% endif %} <i>{{ item.conference }}</i></p>
       <p><i>{{ item.author }}</i></p>
     {% endfor %}
   </div>
