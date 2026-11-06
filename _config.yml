@@ -11,6 +11,7 @@ url: "https://shehzade.github.io"
 baseurl: ""
 repo: shehzade/shehzade.github.io
 permalink: /:year/:month/:day/:title/
+future: true
 
 markdown: kramdown
 highlighter: rouge

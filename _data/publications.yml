@@ -1,8 +1,8 @@
 items:
-  - name: 'Mechanistic Abliteration and SFT Trajectory Alignment for Autonomous Red Team Agents'
+  - name: 'Building a Local 8B Active Directory Agent on an RTX 3090'
     author: 'Abdullah Ansari'
     conference: Independent Research (July 2026)
-    url: '/assets/docs/RedAI_Paper.pdf'
+    url: '/2026/07/15/redagent-local-ad-agent/'
 
   - name: 'Megafeis-palm: Exploiting Vulnerabilities to Open Bluetooth SmartLocks'
     author: 'Abdullah Ansari'
