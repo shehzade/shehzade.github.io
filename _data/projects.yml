@@ -8,10 +8,6 @@ items:
     url: https://github.com/shehzade/naa-dump-offline
     description: Offline extractor and decryptor for SCCM/MECM Network Access Account (NAA) credentials and policy secrets from dead-disk WMI repositories and DPAPI master keys.
 
-  - name: red-agent
-    url: /assets/docs/RedAI_Paper.pdf
-    description: Autonomous Red Teaming Agent combining abliteration and SFT trajectory alignment to navigate complex firewalled Active Directory environments.
-
   - name: peeping-tom
     url: https://github.com/shehzade/peeping-tom
     description: Remote C++ Keylogger for Windows.
