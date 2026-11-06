@@ -20,7 +20,7 @@
   background-color: #1c1b1a;
 }
 .highlight .gp {
-  color: #b6ff2e;
+  color: #ff3344;
   font-weight: bold;
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
@@ -28,7 +28,7 @@
   font-style: italic;
 }
 .highlight .cp {
-  color: #b6ff2e;
+  color: #ff3344;
   font-weight: bold;
 }
 .highlight .err {
@@ -41,7 +41,7 @@
   font-style: italic;
 }
 .highlight .k, .highlight .kd, .highlight .kv {
-  color: #b6ff2e;
+  color: #ff3344;
   font-weight: bold;
 }
 .highlight .o, .highlight .ow {
@@ -55,7 +55,7 @@
   color: #ff5555;
 }
 .highlight .gi {
-  color: #b6ff2e;
+  color: #ff3344;
 }
 .highlight .ge {
   font-style: italic;
@@ -72,7 +72,7 @@
   font-weight: bold;
 }
 .highlight .kn, .highlight .kp, .highlight .kr, .highlight .gh, .highlight .gu {
-  color: #b6ff2e;
+  color: #ff3344;
   font-weight: bold;
 }
 .highlight .kt, .highlight .no, .highlight .nc, .highlight .nd, .highlight .nn, .highlight .bp, .highlight .ne {
@@ -80,7 +80,7 @@
   font-weight: bold;
 }
 .highlight .nl, .highlight .nt {
-  color: #b6ff2e;
+  color: #ff3344;
   font-weight: bold;
 }
 .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx, .highlight .ld, .highlight .ss {
@@ -91,7 +91,7 @@
   color: #e0af68;
 }
 .highlight .sa {
-  color: #b6ff2e;
+  color: #ff3344;
   font-weight: bold;
 }
 .highlight .se, .highlight .sc, .highlight .si {

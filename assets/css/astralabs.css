@@ -12,7 +12,7 @@
   --acid-glow: rgba(255, 51, 68, 0.45);
   --acid-dim: rgba(255, 51, 68, 0.15);
   --dot: rgb(237 230 225 / 8%);
-  --sans: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --sans: "Archivo", "Arial Narrow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
   --mono: "Martian Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
   --edge: 24px;
   --snap: cubic-bezier(.3, 1.35, .5, 1);
@@ -234,8 +234,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--mark);
   font-family: var(--sans);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-variation-settings: "wdth" 110;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
   margin-top: 0;
 }
 
@@ -503,7 +505,7 @@ section.site-section {
   transform: translateY(-3px);
   border-color: var(--acid);
   background: var(--plate-hover);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(182, 255, 46, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 51, 68, 0.12);
 }
 
 .card-top {
