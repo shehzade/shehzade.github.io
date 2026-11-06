@@ -3,9 +3,9 @@ layout: home
 title: "Home"
 ---
 
-I'm a **Red Team Consultant at Google** and a **Cybersecurity Master's student at NYU**, specializing in adversary simulation, malware development, covert operations, and autonomous offensive agents.
+I'm a **Red Team Consultant at Google** and a **Cybersecurity Master's student at NYU**, specializing in full-scope adversary simulation, initial access operations, custom phishing & AiTM infrastructure, malware development, and autonomous offensive agents.
 
-Professionally, I lead assumed breach red teams, engineer custom phishing payloads & infrastructure, and conduct physical security assessments of enterprise facilities. I also develop custom offensive tooling, research covert C2 channels, and regularly deliver critical risk assessments and remediation strategies directly to CISOs and executive leadership.
+Professionally, I execute end-to-end red teams spanning initial access (spear-phishing campaigns, credential harvesting, AiTM bypass), assumed breach operations, stealth payload development, and physical security assessments. I also engineer custom offensive tooling, research covert C2 channels, and regularly deliver strategic risk assessments directly to CISOs and executive leadership.
 
 In my independent research, I build and evaluate autonomous red teaming agents (see [RedAI Paper](/assets/docs/RedAI_Paper.pdf)) and analyze hardware/BLE vulnerabilities in embedded and IoT devices.
 
