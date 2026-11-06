@@ -1,9 +1,9 @@
 <header class="site-header">
   <div>
-    <a href="{{ site.github.url }}/" class="brand-title">
-      <span class="status-dot" aria-hidden="true"></span>SHEHZADE <span class="brand-slash">//</span> ABDULLAH ANSARI
+    <a href="{{ site.github.url }}/" class="brand-title" id="logo">
+      <span class="status-dot" aria-hidden="true"></span><span class="brand-bracket brand-lb">[</span><span class="brand-text-a">SHEHZADE</span><span class="brand-slash">//</span><span class="brand-text-b">ABDULLAH ANSARI</span><span class="brand-bracket brand-rb">]</span>
     </a>
-    <div class="brand-subtitle">
+    <div class="brand-subtitle" id="byline" data-text="{{ site.description }}">
       {{ site.description }}
     </div>
   </div>
@@ -17,4 +17,4 @@
     {% endfor %}
   </nav>
 </header>
-<div class="mrule" aria-hidden="true"><i></i></div>
+<div class="mrule" aria-hidden="true"></div>

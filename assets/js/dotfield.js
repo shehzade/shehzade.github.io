@@ -1,11 +1,46 @@
 /**
- * AstraLabs Fast Motion Engine & Interactive Dot Matrix
- * Ported & optimized with high-speed boot ignition, pointer lens, and click shockwaves.
+ * AstraLabs Fast Motion Engine & Verbatim Boot Sequence
+ * Features:
+ * - Boot Ignition wave & multi-wave Sea dotfield
+ * - Wordmark terminal typing boot with bracket snap & tube flicker
+ * - Corner registration mark alignment & strobe lock
+ * - Telemetry real-time clock strobe
+ * - Byline typewriter with crimson block cursor (no layout shift)
+ * - Interactive pointer lens, click ripples, and brand glitch
  */
 (function () {
   'use strict';
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  const R2 = (a, b) => a + Math.random() * (b - a);
+
+  /* Motion keyframes */
+  const hard = kf => kf.map(k => ({ ...k, easing: 'steps(1, end)' }));
+  const STROBE = hard([
+    { opacity: 0 },
+    { opacity: 1, offset: 0.12 },
+    { opacity: 0, offset: 0.24 },
+    { opacity: 1, offset: 0.4 },
+    { opacity: 0.35, offset: 0.56 },
+    { opacity: 1, offset: 0.72 },
+    { opacity: 1 }
+  ]);
+  const TUBE = hard([
+    { opacity: 0 },
+    { opacity: 0.85, offset: 0.08 },
+    { opacity: 0, offset: 0.12 },
+    { opacity: 0, offset: 0.3 },
+    { opacity: 0.5, offset: 0.33 },
+    { opacity: 0.1, offset: 0.36 },
+    { opacity: 1, offset: 0.52 },
+    { opacity: 0.35, offset: 0.55 },
+    { opacity: 1, offset: 0.6 },
+    { opacity: 1 }
+  ]);
+  const SNAP = 'cubic-bezier(.3, 1.35, .5, 1)';
+
+  /* ================= 1. DOT FIELD CANVAS ================= */
   const canvas = document.createElement('canvas');
   canvas.id = 'al-field';
   canvas.setAttribute('aria-hidden', 'true');
@@ -34,8 +69,7 @@
     Math.hypot(cx, H - cy),
     Math.hypot(W - cx, H - cy)
   );
-
-  const easeIO = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeIO = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
   // 4-component wave superposition (AstraLabs Sea System)
   const SEA = [
@@ -91,7 +125,6 @@
     grid = g;
   }
 
-  // Grouped brightness rendering buckets for maximum 60fps/120fps performance
   const LEVELS = 80;
   const boneB = Array.from({ length: LEVELS + 1 }, () => []);
   const redB = Array.from({ length: LEVELS + 1 }, () => []);
@@ -139,7 +172,6 @@
       redB[i].length = 0;
     }
 
-    // Advance shockwave pulses
     for (let i = pulses.length - 1; i >= 0; i--) {
       const p = pulses[i];
       const elapsed = now - p.t0;
@@ -214,7 +246,7 @@
   }
 
   function startSea() {
-    if (reduceMotion) {
+    if (reduce) {
       sea.ramp = 0;
       drawSea(performance.now());
       return;
@@ -225,15 +257,14 @@
     }
   }
 
-  // Fast ignition sequence: 550ms rapid sweep
   function ignite() {
     return new Promise(done => {
-      if (reduceMotion) {
+      if (reduce) {
         done();
         return;
       }
       const t0 = performance.now();
-      const DUR = 550;
+      const DUR = 480;
       const f = () => {
         const t = Math.min(1, (performance.now() - t0) / DUR);
         drawIgnition(Math.max(0.001, easeIO(t)));
@@ -247,8 +278,180 @@
     });
   }
 
-  // Event Listeners for interactive pointer lens & shockwave click ripples
-  if (!reduceMotion) {
+  /* ================= 2. CLOCK TELEMETRY ================= */
+  const pad = n => String(n).padStart(2, '0');
+  function initClock() {
+    const clock = document.getElementById('clock');
+    if (!clock) return;
+    const tick = () => {
+      const d = new Date();
+      clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+      setTimeout(tick, 1000 - d.getMilliseconds());
+    };
+    tick();
+  }
+
+  /* ================= 3. REGISTRATION MARKS ALIGN ================= */
+  async function registerAlign() {
+    const regs = [...document.querySelectorAll('.reg')];
+    if (!regs.length) return;
+    document.body.classList.remove('booting-hud');
+    await Promise.all(regs.map(async (r, i) => {
+      await wait(i * 80);
+      const jumps = 2;
+      for (let k = 0; k < jumps; k++) {
+        Object.assign(r.style, {
+          left: R2(8, 92) + '%',
+          top: R2(8, 88) + '%',
+          right: 'auto',
+          bottom: 'auto',
+          opacity: '1'
+        });
+        await wait(R2(50, 90));
+        r.style.opacity = '0';
+        await wait(R2(40, 70));
+      }
+      r.removeAttribute('style');
+      if (!reduce) {
+        r.animate(STROBE, { duration: 320 });
+      }
+      await wait(280);
+    }));
+  }
+
+  /* ================= 4. WORDMARK BOOT SEQUENCE ================= */
+  async function bootWordmark() {
+    const logo = document.getElementById('logo');
+    if (!logo) return;
+
+    const lb = logo.querySelector('.brand-lb');
+    const rb = logo.querySelector('.brand-rb');
+    const slash = logo.querySelector('.brand-slash');
+    const textA = logo.querySelector('.brand-text-a');
+    const textB = logo.querySelector('.brand-text-b');
+    const statusDot = logo.querySelector('.status-dot');
+
+    const strA = textA ? textA.textContent.trim() : 'SHEHZADE';
+    const strB = textB ? textB.textContent.trim() : 'ABDULLAH ANSARI';
+
+    if (textA) textA.textContent = '';
+    if (textB) textB.textContent = '';
+    logo.classList.remove('booting');
+
+    if (statusDot && !reduce) {
+      statusDot.animate(TUBE, { duration: 500, fill: 'backwards' });
+    }
+
+    if (!reduce) {
+      [lb, slash, rb].filter(Boolean).forEach(el => el.animate(STROBE, { duration: 280, fill: 'backwards' }));
+    }
+
+    // Terminal slash spinner
+    const spinnerFrames = ['/', '-', '\\', '|', '/', '-', '\\', '//'];
+    let spinIdx = 0;
+    const spinInterval = setInterval(() => {
+      if (slash) {
+        slash.textContent = spinnerFrames[spinIdx % (spinnerFrames.length - 1)];
+        spinIdx++;
+      }
+    }, 70);
+
+    await wait(180);
+
+    // Type text A
+    if (textA) {
+      for (let i = 1; i <= strA.length; i++) {
+        textA.textContent = strA.slice(0, i);
+        await wait(36);
+      }
+    }
+
+    await wait(90);
+
+    // Type text B
+    if (textB) {
+      for (let i = 1; i <= strB.length; i++) {
+        textB.textContent = strB.slice(0, i);
+        await wait(32);
+      }
+    }
+
+    clearInterval(spinInterval);
+    if (slash) slash.textContent = '//';
+
+    // Snap bracket bounce
+    if (!reduce && lb && rb) {
+      lb.animate([{ transform: 'none' }, { transform: 'translateX(-7px)', offset: 0.4 }, { transform: 'none' }], { duration: 280, easing: SNAP });
+      rb.animate([{ transform: 'none' }, { transform: 'translateX(7px)', offset: 0.4 }, { transform: 'none' }], { duration: 280, easing: SNAP });
+    }
+
+    await wait(200);
+  }
+
+  /* ================= 5. BYLINE TYPEWRITER ================= */
+  async function typeByline() {
+    const el = document.getElementById('byline');
+    if (!el) return;
+    const fullText = el.getAttribute('data-text') || el.textContent.trim();
+    if (!fullText) return;
+
+    const render = (n, showCursor) => {
+      const typed = fullText.slice(0, n);
+      const rest = fullText.slice(n);
+      el.innerHTML = `${typed}${showCursor ? '<span class="cur"></span>' : ''}<span class="rest">${rest}</span>`;
+    };
+
+    render(0, true);
+    await wait(160);
+
+    for (let i = 1; i <= fullText.length; i++) {
+      render(i, true);
+      const ch = fullText[i - 1];
+      const pause = (ch === '/' || ch === ',' || ch === '-' || ch === '.') ? 110 : 26;
+      await wait(pause);
+    }
+
+    await wait(200);
+    render(fullText.length, false);
+  }
+
+  /* ================= 6. GLITCH ON BRAND INTERACTION ================= */
+  function initGlitch() {
+    const logo = document.getElementById('logo');
+    if (!logo || reduce) return;
+
+    let isGlitching = false;
+    const glitch = async () => {
+      if (isGlitching) return;
+      isGlitching = true;
+      const textA = logo.querySelector('.brand-text-a');
+      const textB = logo.querySelector('.brand-text-b');
+      const origA = textA ? textA.textContent : '';
+      const origB = textB ? textB.textContent : '';
+      const chars = '01#@%&*!§?';
+
+      for (let f = 0; f < 5; f++) {
+        if (textA) {
+          textA.textContent = origA.split('').map(c => Math.random() < 0.25 ? chars[Math.floor(Math.random() * chars.length)] : c).join('');
+        }
+        if (textB) {
+          textB.textContent = origB.split('').map(c => Math.random() < 0.25 ? chars[Math.floor(Math.random() * chars.length)] : c).join('');
+        }
+        await wait(R2(25, 55));
+      }
+      if (textA) textA.textContent = origA;
+      if (textB) textB.textContent = origB;
+      isGlitching = false;
+    };
+
+    logo.addEventListener('pointerenter', e => {
+      if (e.pointerType === 'mouse') glitch();
+    });
+    logo.addEventListener('click', glitch);
+  }
+
+  /* ================= 7. EVENT LISTENERS ================= */
+  if (!reduce) {
     window.addEventListener('pointerdown', e => {
       if (e.button > 0) return;
       if (pulses.length >= 4) pulses.shift();
@@ -276,12 +479,48 @@
     window.addEventListener('blur', () => { lens.on = false; });
   }
 
-  // Start fast ignition immediately on load
+  /* ================= 8. MASTER BOOT SEQUENCE ================= */
+  async function boot() {
+    initClock();
+    initGlitch();
+
+    if (reduce) {
+      document.body.classList.remove('booting-hud');
+      const logo = document.getElementById('logo');
+      if (logo) logo.classList.remove('booting');
+      startSea();
+      return;
+    }
+
+    const logo = document.getElementById('logo');
+    if (logo) logo.classList.add('booting');
+    document.body.classList.add('booting-hud');
+
+    drawIgnition(0.0001);
+
+    // 1. Ignition wave expands from center
+    await ignite();
+    startSea();
+
+    // 2. Wordmark terminal boot sequence
+    await bootWordmark();
+
+    // 3. Registration marks align into corners
+    await registerAlign();
+
+    // 4. Clock telemetry strobes on
+    const clock = document.getElementById('clock');
+    if (clock) {
+      clock.animate(STROBE, { duration: 300 });
+    }
+
+    // 5. Byline types out behind block cursor
+    await typeByline();
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      ignite().then(startSea);
-    });
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    ignite().then(startSea);
+    boot();
   }
 })();

@@ -136,25 +136,6 @@ body {
   }
 }
 
-/* Horizontal scan line */
-@keyframes al-scan {
-  0% {
-    left: 0;
-    width: 24px;
-    opacity: 0.7;
-  }
-  50% {
-    left: calc(100% - 48px);
-    width: 48px;
-    opacity: 1;
-  }
-  100% {
-    left: 0;
-    width: 24px;
-    opacity: 0.7;
-  }
-}
-
 /* Animation utilities */
 .al-light {
   animation: al-light 600ms var(--snap) forwards;
@@ -285,22 +266,35 @@ header.site-header {
 
 .brand-title {
   font-family: var(--mono);
-  font-size: 1.35rem;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--mark);
   display: inline-flex;
   align-items: center;
   transition: color 200ms ease;
+  user-select: none;
 }
 
 .brand-title:hover {
   color: var(--mark);
 }
 
+.brand-bracket {
+  color: var(--acid);
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 220ms var(--snap);
+}
+
+.brand-lb { margin-right: 3px; }
+.brand-rb { margin-left: 3px; }
+
 .brand-title .brand-slash {
   color: var(--acid);
-  margin: 0 4px;
+  margin: 0 6px;
+  font-weight: 700;
+  display: inline-block;
 }
 
 .brand-subtitle {
@@ -311,6 +305,38 @@ header.site-header {
   text-transform: uppercase;
   color: var(--ash);
   margin-top: 5px;
+  min-height: 1.4em;
+}
+
+/* Boot states */
+.booting .brand-text-a,
+.booting .brand-text-b {
+  visibility: hidden;
+}
+
+.booting-hud .reg {
+  visibility: hidden;
+}
+
+/* Typing cursor */
+.cur {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  vertical-align: baseline;
+}
+.cur::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 6px;
+  height: 1.1em;
+  background: var(--acid);
+}
+.rest {
+  visibility: hidden;
 }
 
 nav.site-nav {
@@ -357,17 +383,6 @@ nav.site-nav a:hover, nav.site-nav a.active {
 }
 .mrule::before { left: 0; }
 .mrule::after { right: 0; }
-
-.mrule > i {
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 36px;
-  height: 2px;
-  background: var(--acid);
-  box-shadow: 0 0 6px var(--acid-glow);
-  animation: al-scan 8s ease-in-out infinite alternate;
-}
 
 /* Sections & Layouts */
 section.site-section {

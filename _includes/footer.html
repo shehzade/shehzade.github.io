@@ -5,8 +5,9 @@
     {% endfor %}
   </div>
   <div class="footer-meta">
-    <div class="label">
-      © {{ site.time | date: "%Y" }} Abdullah Ansari (shehzade)
+    <div class="label" style="display: flex; gap: 12px; align-items: center;">
+      <time id="clock" class="text-bone" style="font-variant-numeric: tabular-nums;">00:00:00</time>
+      <span>© {{ site.time | date: "%Y" }} Abdullah Ansari (shehzade)</span>
     </div>
     <div class="footer-credit">
       Theme inspired by <a href="https://astralabs.dev" target="_blank" rel="noopener noreferrer">AstraLabs</a>
