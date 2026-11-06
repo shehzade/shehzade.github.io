@@ -2,7 +2,7 @@ items:
 
   - name: lanyard
     url: https://github.com/shehzade/lanyard
-    description: AI badge hunting, extraction, and CR80 card reproduction for physical penetration testing.
+    description: AI-driven badge OSINT, credential harvesting, and calibrated CR80 card cloning for physical red teams.
 
   - name: naa-dump-offline
     url: https://github.com/shehzade/naa-dump-offline
