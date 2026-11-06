@@ -7,9 +7,10 @@
   --mark: #ffffff;
   --bone: #ede6e1;
   --ash: #8e8380;
-  --acid: #b6ff2e;
-  --acid-glow: rgba(182, 255, 46, 0.4);
-  --acid-dim: rgba(182, 255, 46, 0.15);
+  --red: #ff3344;
+  --acid: #ff3344;
+  --acid-glow: rgba(255, 51, 68, 0.45);
+  --acid-dim: rgba(255, 51, 68, 0.15);
   --dot: rgb(237 230 225 / 8%);
   --sans: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: "Martian Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
