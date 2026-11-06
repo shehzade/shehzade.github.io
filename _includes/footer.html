@@ -1,9 +1,12 @@
-<footer class="pt-5 my-5 text-muted border-top">
-  <div class="row">
-    <div class="col-md-6 text-end social-media-icons">
-      {% for item in site.data.settings.social %}
-        <a href="{{ item.link }}" class="ms-3 fs-5"><i class="{{ item.category }} fa-{{ item.icon }}"></i></a>
-      {% endfor %}
-    </div>
+<footer class="site-footer">
+  <div class="footer-social">
+    {% for item in site.data.settings.social %}
+      <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.icon }}</a>
+    {% endfor %}
+  </div>
+  <div class="label">
+    © {{ site.time | date: "%Y" }} Abdullah Ansari (shehzade)
   </div>
 </footer>
+<div class="reg reg-tl" aria-hidden="true"></div>
+<div class="reg reg-br" aria-hidden="true"></div>

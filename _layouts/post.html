@@ -2,30 +2,25 @@
 layout: default
 ---
 
-<div class="row">
-  <div class="col-md-12">
-    <h3 class="fw-bold mb-3">{{ page.title }}</h3>
-    <p><i>{{ page.date | date: "%b %d, %Y" }}</i></p>
-
-    {% if page.tags and page.tags != empty %}
-    {% assign tags = page.tags %}
-    {% for tag in tags %}
-    {% assign tag_slug = tag | slugify: "raw" %}
-    <span class="badge bg-light text-dark">
-      <a
-        style="text-decoration: none;" 
-        href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}>
-        #{{ tag }}
-      </a>
-    </span>
-    {% endfor %}
-    {% endif %}
-    <hr>
+<article class="site-section">
+  <div class="article-header">
+    <div class="label label-acid" style="margin-bottom: 8px;">// ARTICLE</div>
+    <h1 class="article-title">{{ page.title }}</h1>
+    <div class="article-meta">
+      <span>{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if page.tags and page.tags != empty %}
+        {% assign tags = page.tags %}
+        {% for tag in tags %}
+          {% assign tag_slug = tag | slugify: "raw" %}
+          <a href="{{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}" class="badge-tag">#{{ tag }}</a>
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
-  <div class="col-md-12">
 
+  <div class="article-body">
     {{ content }}
-
-    {% include comments.html %}
   </div>
-</div>
+
+  {% include comments.html %}
+</article>

@@ -2,14 +2,25 @@
 layout: default
 ---
 
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
+<section class="site-section">
+  <div class="section-head">
+    <h3 class="section-title">Press & Media</h3>
+    <span class="label">Coverage // Bulletins</span>
+  </div>
+
+  <div class="item-list">
     {% for post in site.posts %}
     {% if post.press %}
-    <p><a href="{{ post.press }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% else %}
-    <p hidden><a href="{{ post.url }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+    <div class="list-row al-ticks">
+      <div class="list-row-title">
+        <a href="{{ post.press }}" target="_blank" rel="noopener noreferrer">{{ post.title | escape }}</a>
+      </div>
+      <div class="list-row-meta">
+        <span class="badge-tag">PRESS</span>
+        <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+      </div>
+    </div>
     {% endif %}
     {% endfor %}
   </div>
-</div>
+</section>

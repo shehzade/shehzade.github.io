@@ -2,72 +2,91 @@
 layout: default
 ---
 
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
+<section class="site-section">
+  <div class="bio-card al-ticks">
     {{ content }}
   </div>
-  <!--
-  <div class="col-md-4">
-    <img src="{{ site.github.url }}/assets/img/home.jpg" alt="Home" width="100%">
-  </div>
-  -->
-</div>
+</section>
 
 <!-- Projects -->
-<div class="row row-cols-1 row-cols-md-3 g-2 mb-5">
-  <div class="col-md-12">
-    <h4 class="fw-bold border-bottom pb-3 mb-3">Notable Projects</h4>
-    <p>
-      Here are some tools I'm actively developing to share with the security community! Check out
-      my <a href="https://github.com/shehzade">GitHub</a> to see my past work.
-    </p>
+<section class="site-section">
+  <div class="section-head">
+    <h3 class="section-title">Notable Projects</h3>
+    <a href="https://github.com/shehzade" target="_blank" rel="noopener noreferrer" class="label text-acid">GitHub Archive ↗</a>
   </div>
-
-  {% for item in site.data.projects.items %}
-  <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title"><a href="{{ item.url }}">{{ item.name }}</a></h5>
-        <p class="card-text">{{ item.description }} </p>
+  
+  <div class="grid-cards">
+    {% for item in site.data.projects.items %}
+    <a href="{{ item.url }}" class="card-item al-ticks" target="_blank" rel="noopener noreferrer">
+      <div class="card-top">
+        <span class="card-index">0{{ forloop.index }} // TOOL</span>
       </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
-
-<div class="row g-5 mb-5">
-
-  <!-- Publications-->
-  <div class="col-md-6">
-    <h4 class="fw-bold border-bottom pb-3 mb-3">Research Publications</h4>
-    {% for item in site.data.publications.items %}
-      <p><a href="{{ item.url }}">{{ item.name }}</a>{% if item.archive_url %} (<a href="{{ item.archive_url }}">Original</a>){% endif %} <i>{{ item.conference }}</i></p>
-      <p><i>{{ item.author }}</i></p>
+      <div class="card-title">{{ item.name }}</div>
+      <div class="card-desc">{{ item.description }}</div>
+      <div class="card-footer-link">Inspect</div>
+    </a>
     {% endfor %}
   </div>
+</section>
 
-  <!-- Writing Samples -->
-  <div class="col-md-6">
-    <h4 class="fw-bold border-bottom pb-3 mb-4">Writing & Presentation Samples</h4>
+<!-- Research & Writing Samples -->
+<section class="site-section">
+  <div class="two-col-layout">
     
-    <p>While interning at <a href="https://withsecure.com">WithSecure</a>, my mentor tasked me with producing professional, client-grade engagement deliverables for a mock web application assessment. I have included them below for your viewing. Enjoy!
-    <br></br>
-    <b>Note:</b> Client/application information has been redacted and anonymized with my dummy security company (SSG) and a fake client (Dunder Mifflin) to protect the privacy of WithSecure's internal training scenarios.
-    </p>
-    
-    <ul>
-      {% for item in site.data.services.items %}
-      	{% if item.type == "document" %}
-      		<li><b><a href="/assets/docs/{{ item.filename }}">{{ item.name }}</a></b> - {{ item.description }}</li>
-      	{% endif %}
-      	{% if item.type == "video" %}
-      		<li><b><a href="/assets/vids/{{ item.filename }}">{{ item.name }}</a></b> - {{ item.description }}</li>
-      	{% endif %}
-      	{% if item.type == "link" %}
-      		<li><b><a href="{{ item.link }}">{{ item.name }}</a></b> - {{ item.description }}</li>
-      	{% endif %}	
-      {% endfor %}
-    </ul>
+    <!-- Publications -->
+    <div>
+      <div class="section-head">
+        <h3 class="section-title">Research Publications</h3>
+      </div>
+      <div class="item-list">
+        {% for item in site.data.publications.items %}
+        <div class="list-row al-ticks">
+          <div class="list-row-title">
+            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+          </div>
+          <div class="list-row-meta">
+            <span>{{ item.conference }}</span>
+            <span>—</span>
+            <span>{{ item.author }}</span>
+            {% if item.archive_url %}
+            <a href="{{ item.archive_url }}" class="badge-tag badge-original" target="_blank" rel="noopener noreferrer">Original</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Writing Samples -->
+    <div>
+      <div class="section-head">
+        <h3 class="section-title">Deliverables & Samples</h3>
+      </div>
+      <div class="bio-card" style="margin-bottom: 16px; padding: 16px 20px; font-size: 13.5px;">
+        <p style="margin-bottom: 8px;">
+          Engagement deliverables produced during mock assessment training scenarios at <a href="https://withsecure.com" target="_blank" rel="noopener noreferrer" style="color:var(--acid);">WithSecure</a> (anonymized for confidentiality).
+        </p>
+      </div>
+      <div class="item-list">
+        {% for item in site.data.services.items %}
+        <div class="list-row al-ticks">
+          <div class="list-row-title">
+            {% if item.type == "document" %}
+              <a href="/assets/docs/{{ item.filename }}" target="_blank">{{ item.name }}</a>
+            {% elsif item.type == "video" %}
+              <a href="/assets/vids/{{ item.filename }}" target="_blank">{{ item.name }}</a>
+            {% elsif item.type == "link" %}
+              <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+            {% endif %}
+          </div>
+          <div class="list-row-meta">
+            <span class="badge-tag">{{ item.type }}</span>
+            <span>{{ item.description }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
   </div>
-
-</div>
+</section>

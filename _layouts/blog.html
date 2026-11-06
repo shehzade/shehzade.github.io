@@ -2,20 +2,51 @@
 layout: default
 ---
 
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
+<section class="site-section">
+  <div class="section-head">
+    <h3 class="section-title">Blog Posts</h3>
+    <span class="label">Index // Archive</span>
+  </div>
+
+  <div class="item-list">
     {% for post in site.posts %}
-    {% if post.xpost %}
-    <p>[XPOST] <a href="{{ post.xpost }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% elsif post.pdf %}
-    <p>[PDF] <a href="{{ post.pdf }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% elsif post.advisory %}
-    <p hidden><a href="{{ post.advisory }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% elsif post.press %}
-    <p hidden><a href="{{ post.press }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% else %}
-    <p><a href="{{ post.url }}">{{ post.title | escape }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% endif %}
+      {% if post.xpost %}
+      <div class="list-row al-ticks">
+        <div class="list-row-title">
+          <a href="{{ post.xpost }}" target="_blank" rel="noopener noreferrer">{{ post.title | escape }}</a>
+        </div>
+        <div class="list-row-meta">
+          <span class="badge-tag badge-acid">XPOST</span>
+          <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+        </div>
+      </div>
+      {% elsif post.pdf %}
+      <div class="list-row al-ticks">
+        <div class="list-row-title">
+          <a href="{{ post.pdf }}" target="_blank">{{ post.title | escape }}</a>
+        </div>
+        <div class="list-row-meta">
+          <span class="badge-tag">PDF</span>
+          <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+        </div>
+      </div>
+      {% elsif post.advisory or post.press %}
+        <!-- Hidden from main blog listing; displayed on CVE / Press pages -->
+      {% else %}
+      <div class="list-row al-ticks">
+        <div class="list-row-title">
+          <a href="{{ site.github.url }}{{ post.url }}">{{ post.title | escape }}</a>
+        </div>
+        <div class="list-row-meta">
+          <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+          {% if post.tags and post.tags != empty %}
+            {% for tag in post.tags %}
+              <span class="badge-tag">#{{ tag }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
     {% endfor %}
   </div>
-</div>
+</section>

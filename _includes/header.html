@@ -1,19 +1,20 @@
-<header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-5 border-bottom">
+<header class="site-header">
   <div>
-    <a href="{{ site.github.url }}/" class="d-flex align-items-center text-decoration-none">
-      <span class="fs-4 fw-bold">{{ site.header }}</span>
+    <a href="{{ site.github.url }}/" class="brand-title">
+      SHEHZADE <span class="brand-slash">//</span> ABDULLAH ANSARI
     </a>
-    <a href="{{ site.github.url }}/" class="d-flex align-items-center text-decoration-none">
-      <span>{{ site.description }}</span>
-    </a>
+    <div class="brand-subtitle">
+      {{ site.description }}
+    </div>
   </div>
-  <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+  <nav class="site-nav">
     {% for item in site.data.settings.menu %}
-    	{% if item.loc == "internal" %}
-	<a class="me-3 py-2 text-decoration-none" href="{{ site.github.url }}{{ item.url }}">{{ item.name }}</a>
-	{% elsif item.loc == "external" %}
-	<a class="me-3 py-2 text-decoration-none" href="{{ item.url }}">{{ item.name }}</a>
-	{% endif %}
+      {% if item.loc == "internal" %}
+      <a href="{{ site.github.url }}{{ item.url }}">{{ item.name }}</a>
+      {% elsif item.loc == "external" %}
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+      {% endif %}
     {% endfor %}
   </nav>
 </header>
+<div class="mrule" aria-hidden="true"><i></i></div>
