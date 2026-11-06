@@ -1,5 +1,9 @@
 items:
 
+  - name: lanyard
+    url: https://github.com/shehzade/lanyard
+    description: AI badge hunting, extraction, and CR80 card reproduction for physical penetration testing.
+
   - name: naa-dump-offline
     url: https://github.com/shehzade/naa-dump-offline
     description: Offline extractor and decryptor for SCCM/MECM Network Access Account (NAA) credentials and policy secrets from dead-disk WMI repositories and DPAPI master keys.
