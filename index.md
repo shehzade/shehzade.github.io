@@ -18,7 +18,6 @@ In my independent research, I build and evaluate autonomous red teaming agents (
       <li><strong>OSWP</strong> - OffSec Wireless Professional</li>
       <li><strong>VHL Advanced+</strong> - Virtual Hacking Labs</li>
       <li><strong>Security+</strong> - CompTIA Security+</li>
-      <li><em>OSCP</em> - (In Progress)</li>
     </ul>
   </div>
   <div>
