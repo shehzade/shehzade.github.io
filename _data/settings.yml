@@ -2,7 +2,6 @@ menu:
 - {name: 'Blog', loc: 'internal', url: '/blog'}
 - {name: 'CVEs', loc: 'internal', url: '/cve'}
 - {name: 'Press', loc: 'internal', url: '/press'}
-- {name: 'Resume', loc: 'internal', url: '/assets/docs/Abdullah_Ansari_Resume.pdf'}
 social:
 - {icon: 'github', category: "fab", link: 'https://github.com/shehzade'}
 - {icon: 'twitter', category: "fab", link: 'https://twitter.com/shehzade1618'}

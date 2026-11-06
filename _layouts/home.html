@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<section class="site-section">
+<section class="site-section al-enter" style="--al-i: 1;">
   <div class="bio-card al-ticks">
     {{ content }}
   </div>
 </section>
 
 <!-- Projects -->
-<section class="site-section">
+<section class="site-section al-enter" style="--al-i: 2;">
   <div class="section-head">
     <h3 class="section-title">Notable Projects</h3>
     <a href="https://github.com/shehzade" target="_blank" rel="noopener noreferrer" class="label text-acid">GitHub Archive ↗</a>
@@ -17,7 +17,7 @@ layout: default
   
   <div class="grid-cards">
     {% for item in site.data.projects.items %}
-    <a href="{{ item.url }}" class="card-item al-ticks" target="_blank" rel="noopener noreferrer">
+    <a href="{{ item.url }}" class="card-item al-ticks" target="_blank" rel="noopener noreferrer" style="--al-i: {{ forloop.index }};">
       <div class="card-top">
         <span class="card-index">0{{ forloop.index }} // TOOL</span>
       </div>
@@ -30,7 +30,7 @@ layout: default
 </section>
 
 <!-- Research & Writing Samples -->
-<section class="site-section">
+<section class="site-section al-enter" style="--al-i: 3;">
   <div class="two-col-layout">
     
     <!-- Publications -->
@@ -40,7 +40,7 @@ layout: default
       </div>
       <div class="item-list">
         {% for item in site.data.publications.items %}
-        <div class="list-row al-ticks">
+        <div class="list-row al-ticks" style="--al-i: {{ forloop.index }};">
           <div class="list-row-title">
             <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
           </div>
@@ -69,7 +69,7 @@ layout: default
       </div>
       <div class="item-list">
         {% for item in site.data.services.items %}
-        <div class="list-row al-ticks">
+        <div class="list-row al-ticks" style="--al-i: {{ forloop.index }};">
           <div class="list-row-title">
             {% if item.type == "document" %}
               <a href="/assets/docs/{{ item.filename }}" target="_blank">{{ item.name }}</a>

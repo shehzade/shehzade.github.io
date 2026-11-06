@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="site-section">
+<section class="site-section al-enter">
   <div class="section-head">
     <h3 class="section-title">Vulnerability Advisories</h3>
     <span class="label">Disclosures // CVE Index</span>
@@ -11,7 +11,7 @@ layout: default
   <div class="item-list">
     {% for post in site.posts %}
     {% if post.advisory %}
-    <div class="list-row al-ticks">
+    <div class="list-row al-ticks" style="--al-i: {{ forloop.index }};">
       <div class="list-row-title">
         <a href="{{ post.advisory }}" target="_blank" rel="noopener noreferrer">{{ post.title | escape }}</a>
       </div>

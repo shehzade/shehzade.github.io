@@ -1,14 +1,16 @@
 :root {
   --void: #0a0909;
   --plate: #131212;
-  --plate-hover: #181717;
+  --plate-hover: #191818;
   --rule: #2c2a29;
-  --rule-subtle: #1c1b1a;
+  --rule-subtle: #1e1d1c;
   --mark: #ffffff;
   --bone: #ede6e1;
   --ash: #8e8380;
   --acid: #b6ff2e;
-  --dot: rgb(237 230 225 / 9%);
+  --acid-glow: rgba(182, 255, 46, 0.4);
+  --acid-dim: rgba(182, 255, 46, 0.15);
+  --dot: rgb(237 230 225 / 8%);
   --sans: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: "Martian Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
   --edge: 24px;
@@ -54,14 +56,146 @@ body {
   flex: 1;
 }
 
-/* Registration marks */
+/* ==========================================================================
+   Keyframe Animations (AstraLabs Motion System)
+   ========================================================================== */
+
+/* Fluorescent tube strike & ignition */
+@keyframes al-light {
+  0% {
+    opacity: 0.15;
+    filter: brightness(0.3);
+  }
+  6% {
+    opacity: 0.9;
+    filter: brightness(1.6) drop-shadow(0 0 8px var(--acid-glow));
+  }
+  11% {
+    opacity: 0.25;
+    filter: brightness(0.5);
+  }
+  18% {
+    opacity: 1;
+    filter: brightness(1.8) drop-shadow(0 0 14px var(--acid-glow));
+  }
+  24% {
+    opacity: 0.5;
+    filter: brightness(0.7);
+  }
+  35% {
+    opacity: 0.95;
+    filter: brightness(1.3);
+  }
+  48% {
+    opacity: 0.8;
+    filter: brightness(0.95);
+  }
+  65% {
+    opacity: 1;
+    filter: brightness(1.1) drop-shadow(0 0 4px var(--acid-glow));
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+/* Shutter wipe reveal */
+@keyframes al-wipe {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.4;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+/* Upward stagger entrance */
+@keyframes al-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulsing radar / active telemetry beacon */
+@keyframes al-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--acid-glow);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.9);
+    box-shadow: 0 0 6px 2px var(--acid-dim);
+  }
+}
+
+/* Horizontal scan line */
+@keyframes al-scan {
+  0% {
+    left: 0;
+    width: 24px;
+    opacity: 0.7;
+  }
+  50% {
+    left: calc(100% - 48px);
+    width: 48px;
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    width: 24px;
+    opacity: 0.7;
+  }
+}
+
+/* Animation utilities */
+.al-light {
+  animation: al-light 600ms var(--snap) forwards;
+}
+
+.al-enter {
+  animation: al-slide-up 500ms var(--settle) calc(var(--al-i, 0) * 80ms) backwards;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--acid);
+  margin-right: 8px;
+  animation: al-pulse 2.2s infinite ease-in-out;
+  box-shadow: 0 0 6px var(--acid-glow);
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Registration Marks & Technical Decor
+   ========================================================================== */
 .reg {
   position: fixed;
   width: 18px;
   height: 18px;
   pointer-events: none;
   z-index: 9999;
+  opacity: 0.75;
+  transition: opacity 250ms ease, transform 250ms var(--snap);
 }
+
+.reg:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
 .reg::before, .reg::after {
   content: "";
   position: absolute;
@@ -120,7 +254,7 @@ p {
 a {
   color: var(--bone);
   text-decoration: none;
-  transition: color 150ms ease, border-color 150ms ease;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
 a:hover {
@@ -138,6 +272,7 @@ header.site-header {
   flex-direction: column;
   gap: 16px;
   margin-bottom: 24px;
+  animation: al-slide-up 400ms var(--settle) backwards;
 }
 
 @media (min-width: 768px) {
@@ -150,17 +285,22 @@ header.site-header {
 
 .brand-title {
   font-family: var(--mono);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   color: var(--mark);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  transition: color 200ms ease;
+}
+
+.brand-title:hover {
+  color: var(--mark);
 }
 
 .brand-title .brand-slash {
   color: var(--acid);
+  margin: 0 4px;
 }
 
 .brand-subtitle {
@@ -170,7 +310,7 @@ header.site-header {
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--ash);
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 nav.site-nav {
@@ -189,12 +329,14 @@ nav.site-nav a {
   color: var(--ash);
   padding: 6px 0;
   border-bottom: 1px solid transparent;
-  transition: all 180ms ease;
+  transition: all 180ms var(--snap);
+  position: relative;
 }
 
 nav.site-nav a:hover, nav.site-nav a.active {
   color: var(--acid);
   border-bottom-color: var(--acid);
+  transform: translateY(-1px);
 }
 
 /* Measurement Rule */
@@ -223,6 +365,8 @@ nav.site-nav a:hover, nav.site-nav a.active {
   width: 36px;
   height: 2px;
   background: var(--acid);
+  box-shadow: 0 0 6px var(--acid-glow);
+  animation: al-scan 8s ease-in-out infinite alternate;
 }
 
 /* Sections & Layouts */
@@ -265,6 +409,11 @@ section.site-section {
   padding: 24px 28px;
   margin-bottom: 36px;
   position: relative;
+  transition: border-color 200ms ease;
+}
+
+.bio-card:hover {
+  border-color: var(--rule-subtle);
 }
 
 .bio-card p:last-child {
@@ -288,28 +437,24 @@ section.site-section {
   }
 }
 
-@media (min-width: 1024px) {
-  .grid-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .card-item {
   background: var(--plate);
   border: 1px solid var(--rule);
-  padding: 20px 22px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 200ms var(--snap), border-color 200ms ease, background 200ms ease;
+  transition: transform 220ms var(--snap), border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
   position: relative;
   text-decoration: none;
+  animation: al-slide-up 450ms var(--settle) calc(var(--al-i, 0) * 60ms) backwards;
 }
 
 .card-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: var(--acid);
   background: var(--plate-hover);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(182, 255, 46, 0.08);
 }
 
 .card-top {
@@ -324,6 +469,11 @@ section.site-section {
   font-size: 10px;
   letter-spacing: .15em;
   color: var(--ash);
+  transition: color 200ms ease;
+}
+
+.card-item:hover .card-index {
+  color: var(--acid);
 }
 
 .card-title {
@@ -333,6 +483,7 @@ section.site-section {
   color: var(--mark);
   margin-bottom: 10px;
   letter-spacing: 0.02em;
+  transition: color 200ms ease;
 }
 
 .card-item:hover .card-title {
@@ -342,8 +493,8 @@ section.site-section {
 .card-desc {
   font-size: 13.5px;
   color: var(--bone);
-  line-height: 1.5;
-  margin-bottom: 16px;
+  line-height: 1.55;
+  margin-bottom: 18px;
   flex-grow: 1;
 }
 
@@ -361,11 +512,11 @@ section.site-section {
 
 .card-footer-link::after {
   content: "→";
-  transition: transform 150ms ease;
+  transition: transform 180ms var(--snap);
 }
 
 .card-item:hover .card-footer-link::after {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
 /* Corner Ticks */
@@ -380,6 +531,11 @@ section.site-section {
   background-repeat: no-repeat;
   background-position: top left, top left, top right, top right, bottom left, bottom left, bottom right, bottom right;
   background-size: var(--al-tl) 1px, 1px var(--al-tl), var(--al-tl) 1px, 1px var(--al-tl), var(--al-tl) 1px, 1px var(--al-tl), var(--al-tl) 1px, 1px var(--al-tl);
+  transition: background-image 200ms ease;
+}
+
+.card-item:hover.al-ticks, .list-row:hover.al-ticks {
+  --al-tk: var(--acid);
 }
 
 /* Two-column layout for home sections */
@@ -406,12 +562,14 @@ section.site-section {
   background: var(--plate);
   border: 1px solid var(--rule);
   padding: 16px 20px;
-  transition: border-color 180ms ease, background 180ms ease;
+  transition: border-color 200ms ease, background 200ms ease, transform 200ms var(--snap);
+  animation: al-slide-up 450ms var(--settle) calc(var(--al-i, 0) * 50ms) backwards;
 }
 
 .list-row:hover {
   border-color: var(--rule-subtle);
   background: var(--plate-hover);
+  transform: translateX(2px);
 }
 
 .list-row-title {
@@ -423,6 +581,7 @@ section.site-section {
 
 .list-row-title a {
   color: var(--mark);
+  transition: color 180ms ease;
 }
 
 .list-row-title a:hover {
@@ -449,6 +608,7 @@ section.site-section {
   border: 1px solid var(--rule);
   color: var(--bone);
   text-transform: uppercase;
+  transition: all 180ms ease;
 }
 
 .badge-tag.badge-acid {
@@ -468,6 +628,7 @@ section.site-section {
 /* Single Post / Articles */
 .article-header {
   margin-bottom: 32px;
+  animation: al-slide-up 400ms var(--settle) backwards;
 }
 
 .article-title {
@@ -491,6 +652,7 @@ section.site-section {
 .article-body {
   font-size: 15.5px;
   line-height: 1.7;
+  animation: al-slide-up 500ms var(--settle) 100ms backwards;
 }
 
 .article-body h1, .article-body h2, .article-body h3, .article-body h4 {
@@ -554,7 +716,7 @@ footer.site-footer {
 @media (min-width: 768px) {
   footer.site-footer {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
   }
 }
@@ -570,8 +732,57 @@ footer.site-footer {
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ash);
+  transition: color 180ms ease, transform 180ms var(--snap);
 }
 
 .footer-social a:hover {
   color: var(--acid);
+  transform: translateY(-1px);
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .footer-meta {
+    align-items: flex-end;
+  }
+}
+
+.footer-credit {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ash);
+  opacity: 0.8;
+}
+
+.footer-credit a {
+  color: var(--ash);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 180ms ease;
+}
+
+.footer-credit a:hover {
+  color: var(--acid);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .mrule > i {
+    animation: none;
+  }
+  .status-dot {
+    animation: none;
+  }
 }

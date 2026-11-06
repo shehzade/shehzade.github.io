@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="site-section">
+<section class="site-section al-enter">
   <div class="section-head">
     <h3 class="section-title">Blog Posts</h3>
     <span class="label">Index // Archive</span>
@@ -11,7 +11,7 @@ layout: default
   <div class="item-list">
     {% for post in site.posts %}
       {% if post.xpost %}
-      <div class="list-row al-ticks">
+      <div class="list-row al-ticks" style="--al-i: {{ forloop.index }};">
         <div class="list-row-title">
           <a href="{{ post.xpost }}" target="_blank" rel="noopener noreferrer">{{ post.title | escape }}</a>
         </div>
@@ -21,7 +21,7 @@ layout: default
         </div>
       </div>
       {% elsif post.pdf %}
-      <div class="list-row al-ticks">
+      <div class="list-row al-ticks" style="--al-i: {{ forloop.index }};">
         <div class="list-row-title">
           <a href="{{ post.pdf }}" target="_blank">{{ post.title | escape }}</a>
         </div>
@@ -33,7 +33,7 @@ layout: default
       {% elsif post.advisory or post.press %}
         <!-- Hidden from main blog listing; displayed on CVE / Press pages -->
       {% else %}
-      <div class="list-row al-ticks">
+      <div class="list-row al-ticks" style="--al-i: {{ forloop.index }};">
         <div class="list-row-title">
           <a href="{{ site.github.url }}{{ post.url }}">{{ post.title | escape }}</a>
         </div>
