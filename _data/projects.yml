@@ -1,5 +1,9 @@
 items:
 
+  - name: contraband
+    url: https://github.com/shehzade/contraband
+    description: Multi-protocol network egress assessment and DLP verification framework featuring automated L4 sweeps, corporate proxy traversal, and covert protocol smuggling across 20+ channels.
+
   - name: lanyard
     url: https://github.com/shehzade/lanyard
     description: AI-driven badge OSINT, credential harvesting, and calibrated CR80 card cloning for physical red teams.
