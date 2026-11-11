@@ -12,7 +12,7 @@ items:
     url: https://github.com/shehzade/naa-dump-offline
     pr_url: https://github.com/subat0mik/Misconfiguration-Manager/pull/63
     pr_label: "Misconfig Mgr PR #63 ↗"
-    description: Offline extractor and decryptor for SCCM/MECM Network Access Account (NAA) credentials and policy secrets from dead-disk WMI repositories and DPAPI master keys. Slated for upstream inclusion in Misconfiguration Manager (CRED-4).
+    description: Offline extractor and decryptor for SCCM/MECM Network Access Account (NAA) credentials and policy secrets from dead-disk WMI repositories and DPAPI master keys.
 
   - name: megafeis-palm
     url: https://github.com/ReversecLabs/megafeis-palm
