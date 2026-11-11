@@ -1,5 +1,9 @@
 items:
 
+  - name: ntds-to-bloodhound
+    url: https://github.com/shehzade/ntds-to-bloodhound
+    description: Offline Active Directory database (ntds.dit) parser and BloodHound graph reconstructor in pure Go. Extracts directory objects, group memberships, domain trusts, and binary DACLs from dead-disk ESE database pages and registry hives.
+
   - name: contraband
     url: https://github.com/shehzade/contraband
     description: Multi-protocol network egress assessment and DLP verification framework featuring automated L4 sweeps, corporate proxy traversal, and covert protocol smuggling across 20+ channels.
