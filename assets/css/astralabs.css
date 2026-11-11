@@ -536,6 +536,7 @@ section.site-section {
   transition: transform 220ms var(--snap), border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
   position: relative;
   text-decoration: none;
+  cursor: pointer;
   animation: al-slide-up 450ms var(--settle) calc(var(--al-i, 0) * 60ms) backwards;
 }
 
@@ -607,6 +608,10 @@ section.site-section {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .card-footer-link::after {
