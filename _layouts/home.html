@@ -17,14 +17,25 @@ layout: default
   
   <div class="grid-cards">
     {% for item in site.data.projects.items %}
-    <a href="{{ item.url }}" class="card-item al-ticks" target="_blank" rel="noopener noreferrer" style="--al-i: {{ forloop.index }};">
+    <div class="card-item al-ticks" style="--al-i: {{ forloop.index }};">
       <div class="card-top">
         <span class="card-index">0{{ forloop.index }} // TOOL</span>
+        {% if item.pr_url %}
+        <a href="{{ item.pr_url }}" target="_blank" rel="noopener noreferrer" class="badge-tag badge-acid" style="position: relative; z-index: 2; text-decoration: none;" title="Pull Request #63 on Misconfiguration Manager">
+          {{ item.pr_label | default: "Misconfig Mgr PR ↗" }}
+        </a>
+        {% elsif item.badge %}
+        <span class="badge-tag badge-acid">{{ item.badge }}</span>
+        {% endif %}
       </div>
-      <div class="card-title">{{ item.name }}</div>
+      <div class="card-title">
+        <a href="{{ item.url }}" class="card-main-link" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+          {{ item.name }}
+        </a>
+      </div>
       <div class="card-desc">{{ item.description }}</div>
       <div class="card-footer-link">Inspect</div>
-    </a>
+    </div>
     {% endfor %}
   </div>
 </section>
